@@ -92,7 +92,7 @@ SECRET_KEY = dj_database_url.config('ch@+f4&9ttrrfm65@(625(b2f=hs(cql7wmdke!62jd
 DEBUG = dj_database_url.config('DEBUG', default=False, cast=bool)
 DATABASES = {
     'default': dj_database_url.config(
-        default=dj_database_url.config('')
+        default=dj_database_url.config('postgres://enyogpkwpfsfyq:a855b74f818882383ca64f24b509c00747aaf079d291ef68c112de7e0732fee2@ec2-23-23-247-222.compute-1.amazonaws.com:5432/d5o7dtb36lj2n6')
     )
 }
 """
