@@ -1,0 +1,12 @@
+{%include 'includes/navbar.html'%}
+<div class="container">
+<h4>Departments</h4><hr>
+<ul class="list-group">
+   {%for courses,chapters in courses%}
+  <li class="list-group-item justify-content-between">
+      <a href='/course/{{courses.id}}'>{{courses.title}}</a>
+    <span class="badge badge-default badge-pill">{{chapters}}</span>
+  </li>
+   {%endfor%}
+</ul>
+</div>

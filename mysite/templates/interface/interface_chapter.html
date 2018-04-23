@@ -1,0 +1,33 @@
+{%include 'includes/navbar.html'%}
+{% load markdown_deux_tags %}
+
+
+
+<div class="container">
+  <h2>Chapter Available ({{course.0}})</h2>
+    <hr>
+  <div class="panel-group" id="accordion">
+     {%for chapter,pdfs in chapter%}
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{chapter.id}}">{{chapter.chapter_title}}</a>
+        </h4>
+      </div>
+      <div id="collapse{{chapter.id}}" class="panel-collapse collapse in">
+        <div class="panel-body">
+            <p>{{chapter.description|markdown|urlize|linebreaksbr}}</p>
+            <p>RELATED PDFS/READING MATERIAL</p>
+            <ul class="list-group">
+                 {%for x in pdfs%}
+                <li class="list-group-item justify-content-between">
+                      <a href="/documents/{{x.document}}">{{x.name}}</a>
+                </li>
+                {%endfor%}
+            </ul>
+        </div>
+      </div>
+    </div>
+      {%endfor%}
+  </div>
+</div>
